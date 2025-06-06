@@ -1,26 +1,372 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: "DM Sans", sans-serif;
+  background-color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.column.reverse {
+  flex-direction: column-reverse;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.wrapped {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Common Button Styles */
+.btn {
+  background-color: #68E9BA;
+  color: #3A413E;
+  border-radius: 100px;
+  padding: 10px 24px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(104, 233, 186, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #D9D9D9;
+  color: #323936;
+}
+
+.btn-outline:hover {
+  background-color: #f8f9fa;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 56px;
+  padding: 0 32px;
+  max-width: 90%;
+  margin: 0 auto 26px;
+  height: 80px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 8px;
+}
+
+.header-nav-item {
+  padding: 10px 16px;
+  border-radius: 100px;
+  transition: background-color 0.2s ease;
+}
+
+.header-nav-item:hover {
+  background-color: #f8f9fa;
+}
+
+.header-nav-item.highlight {
+  background-color: #F3F5F3;
+}
+
+.header-nav-item a {
+  color: #3A413E;
+  font-size: 16px;
+  text-decoration: none;
+  line-height: 22px;
+}
+
+.header-logo {
+  height: 30px;
+  width: 120px;
+  display: block;
+}
+
+/* Banner Styles */
+.banner {
+  background: linear-gradient(90deg, rgba(230, 249, 245, 1) 0%, rgba(235, 217, 217, 1) 100%);
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 24px;
+  overflow: hidden;
+  margin: 40px auto;
+  max-width: 90%;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.banner-large {
+  min-height: 700px;
+  background: linear-gradient(90deg, rgba(249, 244, 230, 1) 0%, rgba(217, 235, 227, 1) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 40px 100px;
+  max-width: 90%;
+}
+
+.banner-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-text h1 {
+  font-size: 42px;
+  line-height: 46px;
+  color: #2B2B2B;
+  letter-spacing: -0.4px;
+  margin-bottom: 16px;
+}
+
+.banner-text p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #575757;
+  margin-bottom: 40px;
+}
+
+.banner-cards {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.banner-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border-radius: 12px;
+  padding: 10px 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+  color: #3A413E;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  min-width: 190px;
+}
+
+.banner-card:hover {
+  transform: translateY(-2px);
+}
+
+.banner-card-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.banner-card-arrow {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 8px;
+  background-image: url('/img/arrow.png');
+  display: block;
+}
+
+/* Content Area Styles */
+.content-area {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content-item {
+  margin: 80px 0;
+}
+
+/* Footer Styles */
+.footer {
+  max-width: 90%;
+  margin: 0 auto;
+  background-color: #404040;
+  border-radius: 16px;
+  padding: 45px 108px;
+  color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 32px;
+}
+
+.footer-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  gap: 32px;
+}
+
+.footer-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-social {
+  padding: 10px 0;
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #d1d1d1;
+  padding-top: 46px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 100;
+}
+
+.footer-bottom a {
+  color: inherit;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 16px;
+}
+
+.newsletter-input {
+  border-radius: 32px;
+  border: 1px solid #fff;
+  background: #535353;
+  color: #bababa;
+  padding: 12px 16px;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .banner {
+    padding: 20px;
+  }
+  
+  .content-area {
+    padding: 0 24px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+    flex-wrap: wrap;
+  }
+  
+  .header-nav {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+  
+  .banner-text h1 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  
+  .banner-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer {
+    padding: 20px;
+  }
+  
+  .footer-top {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .footer-menu {
+    flex-direction: column;
+    gap: 12px;
+  }
 }

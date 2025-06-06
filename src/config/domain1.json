@@ -1,0 +1,243 @@
+{
+  "branding": {
+    "logo": "https://i.ibb.co/fdcHch8V/Layer-1-1.png",
+    "companyName": "Domain1 Financial",
+    "primaryColor": "#68E9BA",
+    "secondaryColor": "#3A413E",
+    "accentColor": "#5048BE"
+  },
+  "header": {
+    "navigation": [
+      { "label": "Category", "href": "/category" },
+      { "label": "Listing", "href": "/listing" },
+      { "label": "About us", "href": "/about", "highlight": true }
+    ],
+    "ctaButton": {
+      "text": "Contact us",
+      "href": "/contact"
+    }
+  },
+  "homepage": {
+    "banner": {
+      "title": "Unlocking smarter choices and bigger savings for everyone",
+      "description": "Find the most reliable and cost-effective SIM-only deals, energy plans, insurance, mobile subscriptions, and fuel savings—free, secure, and packed with exclusive offers.",
+      "backgroundImage": "/img/homepage/homepage-banner-img.png",
+      "cards": [
+        { "type": "dsl", "label": "DSL Comparison", "href": "/dsl" },
+        { "type": "credit", "label": "Credit Comparison", "href": "/credit" },
+        { "type": "sim", "label": "SIM Deals", "href": "/sim" },
+        { "type": "fixed", "label": "Fixed Costs", "href": "/fixed" }
+      ]
+    },
+    "infoSection": {
+      "title": "Why Pricefur is Your Go-To Platform for Smart Savings",
+      "description": "You can make smarter financial decisions with exclusive deals, secure comparisons, and an easy-to-use platform.",
+      "image": "/img/homepage/homepage-image.png",
+      "features": [
+        {
+          "icon": "/img/icons/balance.png",
+          "title": "Comprehensive Price Comparisons"
+        },
+        {
+          "icon": "/img/icons/pricetag.png",
+          "title": "Exclusive Deals & Savings"
+        },
+        {
+          "icon": "/img/icons/verified.png",
+          "title": "Trusted and Secure"
+        },
+        {
+          "icon": "/img/icons/puzzle.png",
+          "title": "Easy-to-Use"
+        }
+      ]
+    },
+    "coloredSection": {
+      "title": "Cut your expenses annually",
+      "description": "Our comparison tool helps you quickly identify potential savings on energy, insurance, internet & TV, and SIM-only plans. We curate the best deals tailored to your needs, offering a secure, simple, and fast way to reduce expenses.",
+      "backgroundColor": "#5048BE",
+      "items": [
+        {
+          "title": "Free savings and greater financial freedom",
+          "description": "Enjoy free savings and gain greater financial freedom with our hassle-free comparison tool. Cut costs effortlessly and keep more of your money for what truly matters.",
+          "image": "/img/homepage/savings-img.png"
+        },
+        {
+          "title": "Sharp deals",
+          "description": "The best, handpicked offers designed to help you save smartly. Get top discounts on essential services and cut costs without the hassle.",
+          "image": "/img/homepage/deals-img.png"
+        }
+      ]
+    },
+    "fillSection": {
+      "items": [
+        {
+          "title": "Low interest rates",
+          "description": "Whether you're refinancing or taking out a new loan, lower rates mean smaller monthly payments and more savings over time. Don't miss the opportunity to secure better financial deals!",
+          "image": "/img/homepage/image1.png",
+          "buttonText": "Learn more"
+        },
+        {
+          "title": "Affordable insurance rates",
+          "description": "Lower insurance rates help you save on premiums while keeping great coverage. Compare deals to secure the best protection at the lowest cost today!",
+          "image": "/img/homepage/image3.png",
+          "buttonText": "Learn more"
+        },
+        {
+          "title": "Slash your fuel and energy costs today",
+          "description": "Lower fuel and energy costs help you save on everyday expenses. By switching providers or finding better deals, you can cut your bills and keep more money for what matters most. Start saving today!",
+          "image": "/img/homepage/image5.png",
+          "buttonText": "Learn more"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What People Say About Us",
+      "testimonials": [
+        {
+          "name": "Chrystal W.",
+          "location": "Berlin, DE",
+          "avatar": "/img/homepage/testimonial1.png",
+          "quote": "I was surprised at how much I could save! In just a few minutes, I found better deals on my internet and insurance, cutting my costs significantly. Highly recommended!",
+          "bgColor": "yellow"
+        },
+        {
+          "name": "LaDonna B.",
+          "location": "New Jersey, NY",
+          "avatar": "/img/homepage/testimonial3.png",
+          "quote": "Switching to better deals has never been this simple! This tool helped me cut my internet and SIM-only costs significantly without spending hours searching.",
+          "bgColor": "teal",
+          "span": true
+        },
+        {
+          "name": "Landon",
+          "location": "Portland, ME",
+          "avatar": "/img/homepage/testimonial2.png",
+          "quote": "Thanks to this amazing comparison tool, I've saved hundreds on energy and insurance! Fast, easy, and hassle-free.",
+          "bgColor": "purple"
+        }
+      ]
+    },
+    "resources": {
+      "title": "Pricefur resources",
+      "ctaText": "More resources",
+      "resources": [
+        {
+          "title": "Easy Ways to Reduce Expenses",
+          "date": "12 Jan 2025",
+          "duration": "11 min read",
+          "description": "Discover simple and effective ways to cut costs on everyday expenses. From energy...",
+          "image": "/img/homepage/resource3.png",
+          "href": "/blog/reduce-expenses"
+        },
+        {
+          "title": "The Secret to Effortless Savings",
+          "date": "12 March 2025",
+          "duration": "8 min read",
+          "description": "Discover simple ways to cut costs without the hassle. Learn how to save on energy, insurance, and more with our comprehensive guide.",
+          "image": "/img/homepage/resource2.png",
+          "href": "/blog/effortless-savings"
+        },
+        {
+          "title": "Your Shortcut to Financial Freedom",
+          "date": "28 Feb 2025",
+          "duration": "5 min read",
+          "description": "Quickly cut costs on energy, insurance, and more with the best deals tailored for you...",
+          "image": "/img/homepage/resource1.png",
+          "href": "/blog/financial-freedom"
+        }
+      ],
+      "helpSection": {
+        "title": "Have question? We're here to help.",
+        "description": "Our team is here to provide the support and answers you need!",
+        "buttonText": "Contact us"
+      }
+    }
+  },
+  "categories": {
+    "banking": {
+      "title": "Banking & Finance",
+      "cards": [
+        {
+          "title": "Accounts",
+          "features": ["Business account", "Student account", "Current Account Comparison"],
+          "theme": "accounts-theme"
+        },
+        {
+          "title": "Deposits",
+          "features": ["Deposit", "Term Deposit", "Best Deposit Comparison"],
+          "theme": "deposits-theme"
+        },
+        {
+          "title": "Credit",
+          "features": ["Credit Card"],
+          "theme": "credit-theme",
+          "size": "small"
+        },
+        {
+          "title": "Loans & Credit",
+          "features": ["Term Loan", "Mini Loan", "Car Loan", "Student Credit", "Construction Financing", "Crowdfunding"],
+          "theme": "loans-theme",
+          "size": "long"
+        }
+      ]
+    },
+    "insurance": {
+      "title": "Insurance",
+      "cards": [
+        {
+          "title": "Personal Insurance",
+          "features": ["Health Insurance", "Life Insurance", "Disability Insurance"],
+          "theme": ""
+        },
+        {
+          "title": "Property Insurance",
+          "features": ["Home Insurance", "Auto Insurance", "Renters Insurance"],
+          "theme": ""
+        }
+      ]
+    }
+  },
+  "iframes": {
+    "dslCalculator": {
+      "src": "https://tools.financeads.net/ratenkreditrechner.php?tp=dif&wf=52252&ntpl=responsive&country=NL&h=1",
+      "width": "650",
+      "height": "890"
+    }
+  },
+  "footer": {
+    "links": [
+      { "label": "OUR PRODUCTS", "href": "/products" },
+      { "label": "NEWS & PRESS", "href": "/news" },
+      { "label": "PRICING PLANS", "href": "/pricing" },
+      { "label": "ABOUT US", "href": "/about" },
+      { "label": "CAREER", "href": "/career" }
+    ],
+    "newsletter": {
+      "title": "Subscribe to our Newsletter",
+      "placeholder": "Your email address"
+    },
+    "social": [
+      {
+        "platform": "Twitter",
+        "href": "https://twitter.com",
+        "icon": "https://i.ibb.co/pj7mT25Z/mage-x.png"
+      },
+      {
+        "platform": "Facebook",
+        "href": "https://facebook.com",
+        "icon": "https://i.ibb.co/0ykqfMph/Social-Icon-1.png"
+      },
+      {
+        "platform": "LinkedIn",
+        "href": "https://linkedin.com",
+        "icon": "https://i.ibb.co/mL4gR1q/Social-Icon.png"
+      }
+    ],
+    "copyright": "© 2025 Apivo. All rights reserved.",
+    "legal": [
+      { "label": "Privacy Policy", "href": "/privacy" },
+      { "label": "Terms of Service", "href": "/terms" }
+    ]
+  }
+}
