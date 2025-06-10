@@ -84,15 +84,29 @@ export default function HomePage() {
 
   return (
     <Layout config={config}>
-      <div id="wrapper" style={{ padding: '0 20px' }}>
+      <div id="wrapper" className="homepage">
         <Banner config={config.homepage.banner} />
         
         <section className="content-area">
-          <InfoSection config={config.homepage.infoSection} />
-          <ColoredSection config={config.homepage.coloredSection} />
-          <FillSection config={config.homepage.fillSection} />
-          <TestimonialSection config={config.homepage.testimonials} />
-          <ResourcesSection config={config.homepage.resources} />
+          <div className="content-item" id="item-info">
+            <InfoSection config={config.homepage.infoSection} />
+          </div>
+          
+          <div className="content-item" id="item-colored">
+            <ColoredSection config={config.homepage.coloredSection} />
+          </div>
+          
+          <div className="content-item" id="item-fill">
+            <FillSection config={config.homepage.fillSection} />
+          </div>
+          
+          <div className="content-item" id="item-masonry">
+            <TestimonialSection config={config.homepage.testimonials} />
+          </div>
+          
+          <div className="content-item" id="item-banner">
+            <ResourcesSection config={config.homepage.resources} />
+          </div>
         </section>
       </div>
     </Layout>

@@ -1,7 +1,7 @@
 {
   "branding": {
     "logo": "https://i.ibb.co/fdcHch8V/Layer-1-1.png",
-    "companyName": "Domain Test Etc",
+    "companyName": "Geo Gici Cici",
     "primaryColor": "#68E9BA",
     "secondaryColor": "#3A413E",
     "accentColor": "#5048BE"
@@ -10,16 +10,16 @@
     "navigation": [
       { "label": "Category", "href": "/category" },
       { "label": "Listing", "href": "/listing" },
-      { "label": "About us", "href": "/about", "highlight": true }
+      { "label": "About Gigi", "href": "/about", "highlight": true }
     ],
     "ctaButton": {
-      "text": "Contact us",
+      "text": "Contact Gigi",
       "href": "/contact"
     }
   },
   "homepage": {
     "banner": {
-      "title": "Unlocking smarter choices and bigger savings for everyone (test)",
+      "title": "Unlocking smarter text second domain",
       "description": "Find the most reliable and cost-effective SIM-only deals, energy plans, insurance, mobile subscriptions, and fuel savings—free, secure, and packed with exclusive offers.",
       "backgroundImage": "/img/homepage/homepage-banner-img.png",
       "cards": [
@@ -30,7 +30,7 @@
       ]
     },
     "infoSection": {
-      "title": "Why Pricefur is Your Go-To Platform for Smart Savings",
+      "title": "Why why why",
       "description": "You can make smarter financial decisions with exclusive deals, secure comparisons, and an easy-to-use platform.",
       "image": "/img/homepage/homepage-image.png",
       "features": [

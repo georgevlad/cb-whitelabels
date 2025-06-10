@@ -5,10 +5,11 @@ import fs from 'fs';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { name: string } }
+  { params }: { params: Promise<{ name: string }> }
 ) {
   try {
-    const { name } = params;
+    // Await the params object before destructuring
+    const { name } = await params;
     
     // Validate the config name to prevent directory traversal
     if (!name || !/^[a-zA-Z0-9_-]+$/.test(name)) {

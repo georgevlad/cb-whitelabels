@@ -8,51 +8,25 @@ interface FillSectionProps {
 
 export default function FillSection({ config }: FillSectionProps) {
   return (
-    <div className="content-item">
+    <>
       {config.items.map((item, index) => (
-        <div 
-          key={index}
-          className="flex align-center justify-between"
-          style={{ marginBottom: '32px' }}
-        >
-          <div 
-            className="flex column align-start"
-            style={{ maxWidth: '420px' }}
-          >
-            <h5 style={{
-              fontSize: '24px',
-              lineHeight: '32px',
-              color: '#3A413E',
-              marginBottom: '16px'
-            }}>
-              {item.title}
-            </h5>
-            <p style={{
-              fontSize: '16px',
-              lineHeight: '26px',
-              color: '#787878',
-              marginBottom: '24px'
-            }}>
-              {item.description}
-            </p>
-            <Button variant="outline">
-              {item.buttonText}
-            </Button>
+        <div key={index} className="flex align-center justify-between">
+          <div className="content-text flex column align-start">
+            <h5>{item.title}</h5>
+            <p>{item.description}</p>
+            <Button variant="outline">{item.buttonText}</Button>
           </div>
-          <div
-            style={{
-              backgroundImage: `url(${item.image})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'right',
-              backgroundSize: 'cover',
-              borderRadius: '24px',
-              minHeight: '350px',
-              flex: '1 1 50%',
-              marginLeft: '40px'
-            }}
+          <div 
+            className={`content-image ${getImageId(index)}`}
+            id={getImageId(index)}
           />
         </div>
       ))}
-    </div>
+    </>
   );
+}
+
+function getImageId(index: number): string {
+  const imageIds = ['low-interest', 'affordable-insurance', 'third-insurance'];
+  return imageIds[index] || '';
 }
