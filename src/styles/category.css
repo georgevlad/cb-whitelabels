@@ -1,0 +1,221 @@
+body.category {
+    #wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .container {
+        display: flex;
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        padding: 24px 0;
+    }
+
+    .sidebar-header {
+        margin-bottom: 24px;
+    }
+
+    .sidebar-header h2 {
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 2px;
+        color: #323936;
+    }
+
+    .nav-item {
+        padding: 12px 24px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #323936;
+        border-radius: 16px;
+    }
+
+    .nav-item:hover {
+    }
+
+    .nav-item.active {
+        background-color: #DEEDE4;
+        font-weight: 500;
+    }
+
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .main-content {
+        flex: 1;
+        padding: 24px;
+        overflow-y: auto;
+    }
+
+    .content-section {
+        display: none;
+    }
+
+    .content-section.active {
+        display: block;
+    }
+
+    .section-title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 32px;
+        letter-spacing: -0.025em;
+    }
+
+    .cards-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .feature-card {
+        border-radius: 16px;
+        padding: 24px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        flex: auto;
+
+        &:nth-child(1) {
+            background-color: #ECFFE4;
+        }
+        &:nth-child(2) {
+            background-color: #F2F1FE;
+        }
+        &:nth-child(3) {
+            background-color: #F0F7F4;
+        }
+        &:nth-child(4) {
+            background-color: #FEF7F1;
+        }
+
+        &.small {
+            flex: 1 0 30%;
+        }
+
+        &.long {
+            flex: 1 0 55%;
+        }
+    }
+
+    .feature-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        height: 100%;
+    }
+
+    .card-content h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .card-content p {
+        margin-bottom: 4px;
+    }
+
+    .card-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        flex-shrink: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &.accounts-theme {
+            background-image: url("/img/category/piggy.png");
+            width: 130px;
+            height: 142px;
+        }
+
+        &.credit-theme {
+            background-image: url("/img/category/coins.png");
+            width: 207px;
+            height: 142px;
+        }
+
+        &.loans-theme {
+            background-image: url("/img/category/long.png");
+            width: 308px;
+            height: 194px;
+        }
+
+        &.deposits-theme {
+            background-image: url("/img/category/house-cash.png");
+            width: 158px;
+            height: 142px;
+        }
+    }
+
+    .feature-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .feature-list li {
+        line-height: 26px;
+        color: #3A413E;
+        padding: 2px 0;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .sidebar {
+            width: 100%;
+            padding: 16px 0;
+        }
+
+        .main-content {
+        }
+
+        .cards-grid {
+        }
+    }
+
+    .content-section {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
