@@ -1,5 +1,7 @@
+'use client'
+
 import Button from "@/components/common/Button";
-import { useConfig } from "@/contexts/ConfigContext";
+import { useConfig } from "@/hooks/useConfig";
 
 export default function FillSection() {
 	const config = useConfig().homepage.fillSection;

@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { useConfig } from "@/contexts/ConfigContext";
 import { usePathname } from "next/navigation";
+import { useConfig } from "@/hooks/useConfig";
 
 export default function Header() {
 	const config = useConfig();

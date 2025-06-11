@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import ConfigProvider from "../contexts/ConfigContext";
+import Layout from "@/components/layout/Layout";
+import { headers } from "next/headers";
+import { getSiteConfig } from "@/utils/getSiteConfig";
 
 export const metadata: Metadata = {
 	title: "Cashback Comparison Platform",
@@ -8,11 +11,14 @@ export const metadata: Metadata = {
 		"Find the best deals and save money with our comparison platform",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
+	const host = (await headers()).get("host") ?? "localhost";
+	const config = getSiteConfig(host.split(":")[0]);
+
 	return (
 		<html lang='en'>
 			<head>
@@ -33,7 +39,9 @@ export default function RootLayout({
 				/>
 			</head>
 			<body>
-				<ConfigProvider>{children}</ConfigProvider>
+				<ConfigProvider config={config}>
+					<Layout>{children}</Layout>
+				</ConfigProvider>
 			</body>
 		</html>
 	);

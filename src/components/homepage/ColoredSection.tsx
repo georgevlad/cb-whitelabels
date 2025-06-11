@@ -1,4 +1,6 @@
-import { useConfig } from "@/contexts/ConfigContext";
+'use client'
+
+import { useConfig } from "@/hooks/useConfig";
 
 export default function ColoredSection() {
 	const config = useConfig().homepage.coloredSection;

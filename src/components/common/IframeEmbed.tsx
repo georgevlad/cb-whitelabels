@@ -1,8 +1,7 @@
-// src/components/common/IframeEmbed.tsx
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useConfig } from "@/contexts/ConfigContext";
+import { useConfig } from "@/hooks/useConfig";
 
 export default function IframeEmbed() {
 	const iframeRef = useRef<HTMLIFrameElement>(null);

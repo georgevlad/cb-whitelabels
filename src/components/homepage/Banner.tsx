@@ -1,5 +1,7 @@
+'use client'
+
+import { useConfig } from "@/hooks/useConfig";
 import Link from "next/link";
-import { useConfig } from "@/contexts/ConfigContext";
 
 export default function Banner() {
 	const config = useConfig().homepage.banner;

@@ -1,75 +1,45 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Layout from "@/components/layout/Layout";
-import { SiteConfig } from "@/types/config";
+import { useEffect, useRef, useState } from "react";
+import { useConfig } from "@/hooks/useConfig";
 
 export default function CategoryPage() {
-	const [config, setConfig] = useState<SiteConfig | null>(null);
-	const [activeSection, setActiveSection] = useState("banking");
-	const [loading, setLoading] = useState(true);
+	const config = useConfig();
+	const [activeSection, setActiveSection] = useState(
+		Object.keys(config.categories ?? {})[0]
+	);
+	const activeSectionRef = useRef(activeSection);
 
 	useEffect(() => {
-		const loadConfig = async () => {
-			try {
-				const domain =
-					typeof window !== "undefined"
-						? window.location.hostname
-						: "localhost";
-				const configName = getDomainConfig(domain);
-
-				const response = await fetch(`/api/config/${configName}`);
-				const siteConfig = await response.json();
-				setConfig(siteConfig);
-			} catch (err) {
-				console.error("Failed to load site config:", err);
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		loadConfig();
-	}, []);
+		activeSectionRef.current = activeSection;
+	}, [activeSection]);
 
 	useEffect(() => {
-		// Add keyboard navigation
 		const handleKeyDown = (e: KeyboardEvent) => {
 			if (e.key === "ArrowUp" || e.key === "ArrowDown") {
 				e.preventDefault();
-				const sections = Object.keys(config?.categories || {});
-				const currentIndex = sections.indexOf(activeSection);
+				const list = Object.keys(config.categories ?? {});
+				const activeIndex = list.findIndex(
+					(item) => item === activeSectionRef.current
+				);
 
 				let nextIndex;
 				if (e.key === "ArrowUp") {
-					nextIndex = currentIndex > 0 ? currentIndex - 1 : sections.length - 1;
+					nextIndex = activeIndex > 0 ? activeIndex - 1 : list.length - 1;
 				} else {
-					nextIndex = currentIndex < sections.length - 1 ? currentIndex + 1 : 0;
+					nextIndex = activeIndex < list.length - 1 ? activeIndex + 1 : 0;
 				}
-
-				setActiveSection(sections[nextIndex]);
+				setActiveSection(list[nextIndex]);
 			}
 		};
 
 		document.addEventListener("keydown", handleKeyDown);
+
 		return () => document.removeEventListener("keydown", handleKeyDown);
-	}, [activeSection, config]);
-
-	const getDomainConfig = (domain: string): string => {
-		const domainMap: { [key: string]: string } = {
-			"domain1.com": "domain1",
-			"domain2.com": "domain2",
-			localhost: "domain1",
-			"127.0.0.1": "domain1",
-		};
-		return domainMap[domain] || "domain1";
-	};
-
-	if (loading || !config) {
-		return <div>Loading...</div>;
-	}
+	}, []);
 
 	return (
-		<Layout>
+		<div className='category'>
 			<div id='wrapper'>
 				<div className='flex'>
 					<aside className='sidebar'>
@@ -80,11 +50,11 @@ export default function CategoryPage() {
 							{Object.entries(config.categories).map(([key, category]) => (
 								<div
 									key={key}
-									className={`nav-item ${
-										activeSection === key ? "active" : ""
+									className={`nav-item${
+										activeSection === key ? " active" : ""
 									}`}
-									onClick={() => setActiveSection(key)}
 									data-section={key}
+									onClick={() => setActiveSection(key)}
 								>
 									{category.title}
 								</div>
@@ -133,6 +103,6 @@ export default function CategoryPage() {
 					</main>
 				</div>
 			</div>
-		</Layout>
+		</div>
 	);
 }

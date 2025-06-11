@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { useConfig } from "@/contexts/ConfigContext";
+import { useConfig } from "@/hooks/useConfig";
 
 export default function TestimonialSection() {
 	const config = useConfig().homepage.testimonials;

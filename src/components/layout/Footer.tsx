@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { useConfig } from "@/contexts/ConfigContext";
 import Button from "../common/Button";
+import { useConfig } from "@/hooks/useConfig";
 
 export default function Footer() {
 	const config = useConfig().footer;

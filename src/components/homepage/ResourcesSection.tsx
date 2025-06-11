@@ -1,6 +1,8 @@
+'use client'
+
 import Link from "next/link";
 import Button from "@/components/common/Button";
-import { useConfig } from "@/contexts/ConfigContext";
+import { useConfig } from "@/hooks/useConfig";
 
 export default function ResourcesSection() {
 	const config = useConfig().homepage.resources;
