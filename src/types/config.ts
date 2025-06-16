@@ -5,6 +5,7 @@ export interface SiteConfig {
 	header: HeaderConfig;
 	homepage: HomepageConfig;
 	categories: CategoriesConfig;
+	categoryData?: CategoryData;
 	iframes: IframeConfig;
 	footer: FooterConfig;
 }
@@ -170,4 +171,16 @@ export interface SocialLink {
 	platform: string;
 	href: string;
 	icon: string;
+}
+
+
+export interface CategoryItem {
+  title: string;
+  slug: string;
+  embed_code?: string;
+  children?: CategoryItem[];
+}
+
+export interface CategoryData {
+  categories: CategoryItem[];
 }

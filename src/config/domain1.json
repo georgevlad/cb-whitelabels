@@ -239,5 +239,101 @@
       { "label": "Privacy Policy", "href": "/privacy" },
       { "label": "Terms of Service", "href": "/terms" }
     ]
+  },
+  "categoryData": {
+    "categories": [
+      {
+        "title": "Versicherungen",
+        "slug": "versicherungen",
+        "children": [
+          {
+            "title": "Auto & Fahrzeuge",
+            "slug": "auto-fahrzeuge",
+            "children": [
+              {
+                "title": "Kfz-Versicherung",
+                "slug": "kfz-versicherung",
+                "embed_code": "<div style=\"width: 100%\" id=\"tcpp-iframe-kfz\" data-tracking=\"__Tracking___ID___EXAMPLE__\"></div><script src=\"https://form.partner-versicherung.de/widgets/189888/tcpp-iframe-kfz/kfz-iframe.js\"></script>"
+              },
+              {
+                "title": "Motorradversicherung",
+                "slug": "motorradversicherung",
+                "embed_code": "<div style=\"width: 100%\" id=\"tcpp-iframe-mot\" data-tracking=\"__Tracking___ID___EXAMPLE__\"></div><script src=\"https://form.partner-versicherung.de/widgets/189888/tcpp-iframe-mot/mot-iframe.js\"></script>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Konto & Kredit",
+        "slug": "konto-kredit",
+        "children": [
+          {
+            "title": "Kredit",
+            "slug": "kredit",
+            "children": [
+              {
+                "title": "Kreditrechner",
+                "slug": "kreditrechner",
+                "embed_code": "<div style=\"width: 100%\" id=\"tcpp-iframe-kredit\" data-tracking=\"__Tracking___ID___EXAMPLE__\" data-duration=\"12\" data-purpose=\"8\" data-amount=\"5000\"></div><script src=\"https://form.partner-versicherung.de/widgets/189888/tcpp-iframe-kredit/kredit-iframe.js\"></script>"
+              },
+              {
+                "title": "Autokredit",
+                "slug": "autokredit",
+                "embed_code": "<iframe onload=\"fa_iframeresize.do(this);\" src=\"https://tools.financeads.net/autokreditrechner.php?tp=dif&wf=52252&ntpl=responsive&h=1\" scrolling=\"no\" width=\"650\" height=\"890\" style=\"width: 100%; padding:0px; margin:0px; border-width:0px;\" frameborder=\"0\"></iframe><script type=\"text/javascript\" src=\"//js.financeads.net/iframeResizeMe.min.js.gz\"></script>"
+              },
+              {
+                "title": "Ratenkredit",
+                "slug": "ratenkredit",
+                "embed_code": "<iframe onload=\"fa_iframeresize.do(this);\" src=\"https://tools.financeads.net/ratenkreditrechner.php?tp=dif&wf=52252&ntpl=responsive&h=1\" scrolling=\"no\" width=\"650\" height=\"890\" style=\"width: 100%; padding:0px; margin:0px; border-width:0px;\" frameborder=\"0\"></iframe><script type=\"text/javascript\" src=\"//js.financeads.net/iframeResizeMe.min.js.gz\"></script>"
+              },
+              {
+                "title": "Onlinekredit",
+                "slug": "onlinekredit",
+                "embed_code": "<iframe onload=\"fa_iframeresize.do(this);\" src=\"https://tools.financeads.net/minikreditrechner.php?tp=dif&wf=52252&ntpl=responsive&h=1\" scrolling=\"no\" width=\"650\" height=\"890\" style=\"width: 100%; padding:0px; margin:0px; border-width:0px;\" frameborder=\"0\"></iframe><script type=\"text/javascript\" src=\"//js.financeads.net/iframeResizeMe.min.js.gz\"></script>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Strom & Gas",
+        "slug": "strom-gas",
+        "children": [
+          {
+            "title": "Stromvergleich",
+            "slug": "stromvergleich",
+            "children": [
+              {
+                "title": "Strom",
+                "slug": "strom",
+                "embed_code": "<div style=\"width: 100%\" id=\"c24pp-power-iframe\" data-tid=\"__Tracking___ID___EXAMPLE__\" data-scrollto=\"begin\"></div><script src=\"https://files.check24.net/widgets/auto/1143018/c24pp-power-iframe/power-iframe.js\"></script>"
+              },
+              {
+                "title": "Ökostrom",
+                "slug": "okostrom",
+                "embed_code": "<div style=\"width: 100%\" id=\"c24pp-power-iframe\" data-tid=\"__Tracking___ID___EXAMPLE__\" data-scrollto=\"begin\" data-eco=\"yes\"></div><script src=\"https://files.check24.net/widgets/auto/1143018/c24pp-power-iframe/power-iframe.js\"></script>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Internet & Handy",
+        "slug": "internet-handy",
+        "children": [
+          {
+            "title": "Internet",
+            "slug": "internet",
+            "embed_code": "<div style=\"width: 100%\" id=\"c24pp-power-iframe\" data-tid=\"__Tracking___ID___EXAMPLE__\" data-scrollto=\"begin\"></div><script src=\"https://files.check24.net/widgets/auto/1143018/c24pp-power-iframe/power-iframe.js\"></script>"
+          },
+          {
+            "title": "Handytarife",
+            "slug": "handytarife",
+            "embed_code": "<div style=\"width: 100%\" id=\"c24pp-power-iframe\" data-tid=\"__Tracking___ID___EXAMPLE__\" data-scrollto=\"begin\"></div><script src=\"https://files.check24.net/widgets/auto/1143018/c24pp-power-iframe/power-iframe.js\"></script>"
+          }
+        ]
+      }
+    ]
   }
 }
