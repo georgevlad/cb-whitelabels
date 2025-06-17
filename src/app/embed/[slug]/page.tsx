@@ -31,31 +31,103 @@ export default function EmbedPage() {
       // Clear any existing content
       embedRef.current.innerHTML = '';
       
-      // Insert the embed code
-      embedRef.current.innerHTML = category.embed_code;
+      // Decode HTML entities
+      const decodedEmbedCode = category.embed_code
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"');
       
-      // Execute any scripts in the embed code
-      const scripts = embedRef.current.getElementsByTagName('script');
-      for (let i = 0; i < scripts.length; i++) {
-        const script = scripts[i];
-        const newScript = document.createElement('script');
+      // Check if embed code contains iframe or div elements (not just scripts)
+      const hasNonScriptContent = decodedEmbedCode.includes('<iframe') || 
+                                  decodedEmbedCode.includes('<div');
+      
+      if (hasNonScriptContent) {
+        // For iframe or div-based widgets, insert directly into container
+        embedRef.current.innerHTML = decodedEmbedCode;
         
-        if (script.src) {
-          newScript.src = script.src;
-        } else {
-          newScript.textContent = script.textContent;
+        // Execute any scripts that were inserted
+        const scripts = embedRef.current.getElementsByTagName('script');
+        for (let i = 0; i < scripts.length; i++) {
+          const script = scripts[i];
+          const newScript = document.createElement('script');
+          
+          if (script.src) {
+            newScript.src = script.src;
+          } else {
+            newScript.textContent = script.textContent;
+          }
+          
+          // Copy all attributes
+          for (let j = 0; j < script.attributes.length; j++) {
+            const attr = script.attributes[j];
+            newScript.setAttribute(attr.name, attr.value);
+          }
+          
+          // Replace the old script with the new one
+          script.parentNode?.replaceChild(newScript, script);
         }
+      } else {
+        // For script-only widgets (like flight search), use the relocation method
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = decodedEmbedCode;
         
-        // Copy all attributes
-        for (let j = 0; j < script.attributes.length; j++) {
-          const attr = script.attributes[j];
-          newScript.setAttribute(attr.name, attr.value);
+        const scripts = tempDiv.getElementsByTagName('script');
+        
+        for (let i = 0; i < scripts.length; i++) {
+          const script = scripts[i];
+          const newScript = document.createElement('script');
+          
+          if (script.src) {
+            newScript.src = script.src;
+          } else {
+            newScript.textContent = script.textContent;
+          }
+          
+          // Copy all attributes
+          for (let j = 0; j < script.attributes.length; j++) {
+            const attr = script.attributes[j];
+            newScript.setAttribute(attr.name, attr.value);
+          }
+          
+          newScript.onload = () => {
+            // For script-only widgets, check for content to relocate
+            setTimeout(() => {
+              relocateWidgetContent();
+            }, 2000);
+          };
+          
+          document.head.appendChild(newScript);
         }
-        
-        document.head.appendChild(newScript);
       }
     }
   }, [category]);
+
+  const relocateWidgetContent = () => {
+    if (!embedRef.current) return;
+
+    // Common selectors for third-party widgets
+    const widgetSelectors = [
+      '[id*="tp"]',
+      '[class*="tp"]',
+      '[id*="widget"]',
+      '[class*="widget"]',
+      '[id*="search"]',
+      '[class*="search"]',
+      'iframe[src*="tpembd"]',
+      '[data-tp]'
+    ];
+    
+    widgetSelectors.forEach(selector => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach(el => {
+        // Only move elements that aren't already in our container
+        if (el.closest('.embed-container') === null) {
+          embedRef.current?.appendChild(el);
+        }
+      });
+    });
+  };
 
   if (!category) {
     return (
@@ -77,8 +149,28 @@ export default function EmbedPage() {
           <div className="embed-header">
             <h1>{category.title}</h1>
           </div>
-          <div className="embed-container" ref={embedRef}>
-            {/* Embed code will be inserted here */}
+          <div 
+            className="embed-container" 
+            ref={embedRef}
+            style={{
+              minHeight: '600px',
+              width: '100%',
+              background: '#ffffff',
+              border: '1px solid #e9ecef',
+              borderRadius: '20px',
+              padding: '20px',
+              overflow: 'visible',
+              position: 'relative'
+            }}
+          >
+            <div style={{ 
+              padding: '20px', 
+              textAlign: 'center',
+              color: '#666',
+              fontSize: '16px'
+            }}>
+              Loading widget...
+            </div>
           </div>
         </div>
       </div>
