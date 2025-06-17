@@ -1,16 +1,19 @@
 .subcategory-items {
-            grid-template-columns: 1fr; /* Single column on mobile */
-            gap: 12px;
-        }.category {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 12px;
+}
+
+.category {
     #wrapper {
         max-width: 1400px; /* Increased from 1200px */
         margin: 0 auto;
         padding: 0 24px; /* Added horizontal padding */
+        min-height: calc(100vh - 200px); /* Add minimum height accounting for header/footer */
     }
 
     .container {
         display: flex;
-        min-height: 100vh;
+        min-height: calc(100vh - 200px); /* Ensure container has minimum height */
         gap: 40px; /* Added gap between sidebar and content */
     }
 
@@ -18,6 +21,7 @@
         width: 280px; /* Fixed width for better consistency */
         padding: 32px 0; /* Increased top/bottom padding */
         flex-shrink: 0; /* Prevent shrinking */
+        min-height: 100%; /* Ensure sidebar takes full height */
     }
 
     .sidebar-header {
@@ -76,14 +80,20 @@
         padding: 32px 24px; /* Increased padding */
         overflow-y: auto;
         min-width: 0; /* Prevent flex item from overflowing */
+        min-height: 100%; /* Ensure main content takes full height */
+        display: flex;
+        flex-direction: column;
     }
 
     .content-section {
         display: none;
+        flex: 1; /* Allow content section to grow and fill available space */
+        min-height: 500px; /* Minimum height for content sections */
     }
 
     .content-section.active {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 
     .section-title {
@@ -92,6 +102,7 @@
         margin-bottom: 40px; /* Increased from 32px */
         letter-spacing: -0.025em;
         color: #2B2B2B;
+        flex-shrink: 0; /* Prevent title from shrinking */
     }
 
     .cards-grid {
@@ -101,6 +112,9 @@
         align-items: stretch; /* Changed to stretch for equal height */
         gap: 32px; /* Increased from 24px */
         margin-bottom: 48px; /* Increased from 40px */
+        flex: 1; /* Allow grid to grow and fill remaining space */
+        align-content: flex-start; /* Align wrapped items to the start */
+        min-height: 400px; /* Minimum height for the cards grid */
     }
 
     .feature-card {
@@ -111,6 +125,7 @@
         overflow: hidden;
         flex: auto;
         min-width: 300px; /* Added minimum width */
+        min-height: 250px; /* Added minimum height for cards */
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); /* Added subtle shadow */
 
         &:nth-child(1) {
@@ -266,14 +281,45 @@
         font-size: 15px;
     }
 
+    /* Empty state styling for when there are few or no items */
+    .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 400px;
+        padding: 60px 40px;
+        color: #6c757d;
+        background: #f8f9fa;
+        border-radius: 16px;
+        border: 2px dashed #dee2e6;
+        margin: 20px 0;
+    }
+
+    .empty-state h3 {
+        font-size: 24px;
+        margin-bottom: 12px;
+        color: #495057;
+    }
+
+    .empty-state p {
+        font-size: 16px;
+        max-width: 400px;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+
     @media (max-width: 1200px) {
         #wrapper {
             max-width: 100%;
             padding: 0 20px;
+            min-height: calc(100vh - 180px); /* Adjust for smaller screens */
         }
 
         .container {
             gap: 32px;
+            min-height: calc(100vh - 180px);
         }
 
         .sidebar {
@@ -282,10 +328,12 @@
 
         .cards-grid {
             gap: 24px;
+            min-height: 350px; /* Reduce minimum height on smaller screens */
         }
 
         .feature-card {
             min-width: 280px;
+            min-height: 220px; /* Reduce minimum height on smaller screens */
 
             &.small, &.long {
                 flex: 1 0 calc(50% - 12px);
@@ -297,11 +345,13 @@
         .container {
             flex-direction: column;
             gap: 24px;
+            min-height: auto; /* Remove min-height constraint on mobile */
         }
 
         .sidebar {
             width: 100%;
             padding: 24px 0;
+            min-height: auto; /* Remove min-height constraint on mobile */
         }
 
         .nav-item {
@@ -310,17 +360,30 @@
 
         .main-content {
             padding: 24px 0;
+            min-height: auto; /* Remove min-height constraint on mobile */
+        }
+
+        .content-section {
+            min-height: 300px; /* Reduce minimum height on mobile */
         }
 
         .cards-grid {
             justify-content: center;
+            min-height: 250px; /* Reduce minimum height on mobile */
         }
 
         .feature-card {
+            min-height: 180px; /* Reduce minimum height on mobile */
+
             &.small, &.long {
                 flex: 1 0 100%;
                 max-width: 500px;
             }
+        }
+
+        .empty-state {
+            min-height: 250px;
+            padding: 40px 20px;
         }
     }
 
@@ -337,6 +400,7 @@
         .feature-card {
             padding: 24px;
             min-width: auto;
+            min-height: 160px; /* Further reduce on smaller screens */
         }
 
         .card-header {
@@ -351,6 +415,19 @@
 
         .card-icon {
             order: 1;
+        }
+
+        .empty-state {
+            min-height: 200px;
+            padding: 30px 15px;
+        }
+
+        .empty-state h3 {
+            font-size: 20px;
+        }
+
+        .empty-state p {
+            font-size: 14px;
         }
     }
 
@@ -380,6 +457,8 @@
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased min width */
         gap: 32px; /* Increased from 24px */
         margin-bottom: 48px; /* Increased from 40px */
+        min-height: 400px; /* Add minimum height for subcategory grid */
+        align-content: start; /* Align grid items to start */
     }
 
     .subcategory-card {
@@ -389,6 +468,7 @@
         transition: all 0.3s ease;
         border: 1px solid #e9ecef;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        min-height: 200px; /* Add minimum height for subcategory cards */
     }
 
     .subcategory-card:hover {
@@ -444,6 +524,7 @@
         max-width: 1400px; /* Increased to match category page */
         margin: 0 auto;
         padding: 0 24px; /* Increased padding */
+        min-height: calc(100vh - 200px); /* Add minimum height */
     }
 
     .embed-header {
@@ -483,6 +564,7 @@
     @media (max-width: 768px) {
         #wrapper {
             padding: 0 16px;
+            min-height: calc(100vh - 160px); /* Adjust for mobile */
         }
 
         .embed-header {

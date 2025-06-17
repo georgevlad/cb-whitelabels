@@ -39,6 +39,12 @@ export interface HomepageConfig {
 	fillSection: FillSectionConfig;
 	testimonials: TestimonialSectionConfig;
 	resources: ResourcesSectionConfig;
+	mainDescription: MainDescriptionConfig;
+}
+
+export interface MainDescriptionConfig {
+	title: string;
+	description: string;
 }
 
 export interface BannerConfig {

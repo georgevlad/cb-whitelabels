@@ -4,6 +4,7 @@ import ColoredSection from "@/components/homepage/ColoredSection";
 import FillSection from "@/components/homepage/FillSection";
 import TestimonialSection from "@/components/homepage/TestimonialSection";
 import ResourcesSection from "@/components/homepage/ResourcesSection";
+import MainDescription from "@/components/homepage/MainDescription";
 
 export default function HomePage() {
 	return (
@@ -11,6 +12,10 @@ export default function HomePage() {
 			<Banner />
 
 			<section className='content-area'>
+				<div className='content-item' id='item-main-description'>
+					<MainDescription />
+				</div>
+
 				<div className='content-item' id='item-info'>
 					<InfoSection />
 				</div>

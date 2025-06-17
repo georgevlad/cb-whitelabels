@@ -85,21 +85,21 @@ export default function CategoryPage() {
                       <h3>{child.title}</h3>
                     )}
                     
-                    {child.children && child.children.length > 0 && (
-                      <ul className="feature-list">
-                        {child.children.map((subChild) => (
-                          <li key={subChild.slug}>
-                            {subChild.embed_code ? (
-                              <Link href={`/embed/${subChild.slug}`} className="calculator-link">
-                                {subChild.title}
-                              </Link>
-                            ) : (
-                              subChild.title
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                  {child.children && child.children.length > 0 && (
+                    <div className="subcategory-items">
+                      {child.children.map((subChild) => (
+                        <div key={subChild.slug} className="subcategory-item">
+                          {subChild.embed_code ? (
+                            <Link href={`/embed/${subChild.slug}`} className="embed-link">
+                              {subChild.title}
+                            </Link>
+                          ) : (
+                            <span className="subcategory-title">{subChild.title}</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   </div>
                   <div className={`card-icon`} />
                 </div>

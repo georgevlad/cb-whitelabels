@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 import { getSiteConfig } from "@/utils/getSiteConfig";
 
 export const metadata: Metadata = {
-	title: "Cashback Comparison Platform",
+	title: "Kerdizo.GR - Compare and Save",
 	description:
 		"Find the best deals and save money with our comparison platform",
 };

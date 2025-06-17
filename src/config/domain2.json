@@ -29,6 +29,10 @@
         { "type": "fixed", "label": "Fixed Costs", "href": "/fixed" }
       ]
     },
+    "mainDescription": {
+      "title": "Your Partner for Smarter Financial Decisions",
+      "description": "Welcome to your new go-to destination for comprehensive financial and insurance solutions in Germany. In today's complex world, navigating the vast landscape of insurance policies, loan options, and investment opportunities can be overwhelming. That's why we created this platform: to simplify your search and empower you to make well-informed decisions that truly benefit you."
+    },
     "infoSection": {
       "title": "Why why why",
       "description": "You can make smarter financial decisions with exclusive deals, secure comparisons, and an easy-to-use platform.",
