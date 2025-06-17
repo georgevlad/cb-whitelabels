@@ -23,10 +23,10 @@
       "description": "Find the most reliable and cost-effective SIM-only deals, energy plans, insurance, mobile subscriptions, and fuel savings—free, secure, and packed with exclusive offers.",
       "backgroundImage": "/img/homepage/homepage-banner-img.png",
       "cards": [
-        { "type": "dsl", "label": "DSL Comparison", "href": "/dsl" },
-        { "type": "credit", "label": "Credit Comparison", "href": "/credit" },
-        { "type": "sim", "label": "SIM Deals", "href": "/sim" },
-        { "type": "fixed", "label": "Fixed Costs", "href": "/fixed" }
+        { "type": "dsl", "label": "Kfz-Versicherung", "href": "/embed/kfz-versicherung" },
+        { "type": "credit", "label": "Reiseversicherung", "href": "/embed/reiseversicherung" },
+        { "type": "sim", "label": "Ökostrom", "href": "/embed/okostrom" },
+        { "type": "fixed", "label": "Kreditrechner", "href": "/embed/kreditrechner" }
       ]
     },
     "mainDescription": {
