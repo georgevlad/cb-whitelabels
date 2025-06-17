@@ -212,7 +212,7 @@
   "footer": {
     "links": [
       { "label": "HOME", "href": "/" },
-      { "label": "CATEGORIES", "href": "/categories" },
+      { "label": "CATEGORIES", "href": "/category" },
       { "label": "ABOUT US", "href": "/about" },
       { "label": "CONTACT US", "href": "/" }
     ],
