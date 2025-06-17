@@ -8,6 +8,7 @@ export interface SiteConfig {
 	categoryData?: CategoryData;
 	iframes: IframeConfig;
 	footer: FooterConfig;
+	aboutPage?: AboutPageConfig;
 }
 
 export interface Branding {
@@ -39,7 +40,7 @@ export interface HomepageConfig {
 	fillSection: FillSectionConfig;
 	testimonials: TestimonialSectionConfig;
 	resources: ResourcesSectionConfig;
-	mainDescription: MainDescriptionConfig;
+	mainDescription: MainDescriptionConfig; // Added this new section
 }
 
 export interface MainDescriptionConfig {
@@ -189,4 +190,9 @@ export interface CategoryItem {
 
 export interface CategoryData {
   categories: CategoryItem[];
+}
+
+export interface AboutPageConfig {
+  title: string;
+  description: string;
 }

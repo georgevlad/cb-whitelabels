@@ -1,0 +1,50 @@
+/* Add this to src/styles/about.css */
+
+.about-page {
+  .content-area {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 24px;
+
+    h1 {
+      font-size: 42px;
+      line-height: 52px;
+      color: #2B2B2B;
+      margin-bottom: 40px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .about-content {
+      p {
+        font-size: 18px;
+        line-height: 28px;
+        color: #575757;
+        margin-bottom: 24px;
+        text-align: justify;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-area {
+      padding: 40px 20px;
+
+      h1 {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 32px;
+      }
+
+      .about-content p {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: left;
+      }
+    }
+  }
+}
