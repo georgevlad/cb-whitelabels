@@ -180,19 +180,19 @@ export interface SocialLink {
 	icon: string;
 }
 
-
 export interface CategoryItem {
-  title: string;
-  slug: string;
-  embed_code?: string;
-  children?: CategoryItem[];
+	title: string;
+	slug: string;
+	embed_code?: string;
+	children?: CategoryItem[];
+	cards?: CategoryCard[];
 }
 
 export interface CategoryData {
-  categories: CategoryItem[];
+	categories: CategoryItem[];
 }
 
 export interface AboutPageConfig {
-  title: string;
-  description: string;
+	title: string;
+	description: string;
 }

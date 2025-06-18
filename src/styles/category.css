@@ -9,6 +9,13 @@
         margin: 0 auto;
         padding: 0 24px; /* Added horizontal padding */
         min-height: calc(100vh - 200px); /* Add minimum height accounting for header/footer */
+        display: flex;
+    }
+    
+    @media (max-width: 1023px) {
+        #wrapper {
+            flex-direction: column;
+        }
     }
 
     .container {
@@ -22,11 +29,37 @@
         padding: 32px 0; /* Increased top/bottom padding */
         flex-shrink: 0; /* Prevent shrinking */
         min-height: 100%; /* Ensure sidebar takes full height */
+        
+        @media (max-width: 1023px) {
+            & {
+                padding: 0 !important;
+            }
+
+            nav {
+                display: flex;
+                overflow-x: auto;
+                scrollbar-width: none;
+                scroll-behavior: smooth; 
+
+                .nav-item {
+                    white-space: nowrap;
+                }
+
+                .nav-item::after {
+                    display: none;
+                    content: 'mobile';
+                }
+            }
+        }
     }
 
     .sidebar-header {
         margin-bottom: 32px; /* Increased from 24px */
         padding: 0 24px; /* Added horizontal padding */
+
+        @media (max-width: 1023px) {
+            margin-bottom: 0px;
+        }
     }
 
     .sidebar-header h2 {
@@ -51,6 +84,7 @@
         color: #323936;
         border-radius: 12px; /* Slightly larger border radius */
         font-weight: 500;
+        text-decoration: none;
     }
 
     .nav-item:hover {
@@ -83,6 +117,10 @@
         min-height: 100%; /* Ensure main content takes full height */
         display: flex;
         flex-direction: column;
+
+        @media (max-width: 1023px) {
+            padding-top: 0px !important;
+        }
     }
 
     .content-section {
@@ -410,11 +448,11 @@
         }
 
         .card-content {
-            order: 2;
-        }
-
-        .card-icon {
-            order: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
 
         .empty-state {
@@ -489,11 +527,19 @@
         display: grid;
         grid-template-columns: 1fr 1fr; /* Two columns */
         gap: 12px 20px; /* row gap, column gap */
+
+        @media (max-width: 1023px) {
+            & {
+                grid-template-columns: 1fr;
+            }
+        }
     }
 
     .subcategory-item {
         display: flex;
         align-items: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .embed-link {
