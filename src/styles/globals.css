@@ -7,6 +7,7 @@ html, body {
     font-family: "DM Sans", sans-serif;
 
     * {
+        box-sizing: border-box;
         font-family: "DM Sans", sans-serif;
     }
 }
@@ -83,6 +84,7 @@ html, body {
         top: 42px;
         left: -20px;
         grid-template-columns: 1fr 1fr 1fr;
+        background-color: #fdfdfd;
         gap: 12px 24px;
         border-radius: 24px;
         padding: 24px 32px;
@@ -162,6 +164,13 @@ html, body {
                 letter-spacing: 2px;
                 font-weight: 700;
                 min-width: 190px;
+
+                @media (max-width: 1023px) {
+                    & {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                }
 
                 .label {
                     /*max-width: 80px;*/
@@ -276,6 +285,10 @@ html, body {
             align-items: center;
             padding: 40px 40px 100px;
             max-width: 90%;
+
+            @media (max-width: 1023px) {
+                padding: 40px 12px 100px;
+            }
 
             > div {
                 flex: unset;
@@ -1100,6 +1113,7 @@ button {
 @media (max-width: 1023px) {
     .nav-header {
         display: none;
+        padding: 0px;
     }
 
     #mobileHeader {
@@ -1124,8 +1138,8 @@ button {
         
         #close {
             position: absolute;
-            top: 32px;
-            right: 32px;
+            top: 36px;
+            right: 26px;
         }
 
         .mobileMenuLinks {

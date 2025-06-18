@@ -29,11 +29,37 @@
         padding: 32px 0; /* Increased top/bottom padding */
         flex-shrink: 0; /* Prevent shrinking */
         min-height: 100%; /* Ensure sidebar takes full height */
+        
+        @media (max-width: 1023px) {
+            & {
+                padding: 0 !important;
+            }
+
+            nav {
+                display: flex;
+                overflow-x: auto;
+                scrollbar-width: none;
+                scroll-behavior: smooth; 
+
+                .nav-item {
+                    white-space: nowrap;
+                }
+
+                .nav-item::after {
+                    display: none;
+                    content: 'mobile';
+                }
+            }
+        }
     }
 
     .sidebar-header {
         margin-bottom: 32px; /* Increased from 24px */
         padding: 0 24px; /* Added horizontal padding */
+
+        @media (max-width: 1023px) {
+            margin-bottom: 0px;
+        }
     }
 
     .sidebar-header h2 {
@@ -91,6 +117,10 @@
         min-height: 100%; /* Ensure main content takes full height */
         display: flex;
         flex-direction: column;
+
+        @media (max-width: 1023px) {
+            padding-top: 0px !important;
+        }
     }
 
     .content-section {

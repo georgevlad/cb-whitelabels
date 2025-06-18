@@ -30,9 +30,8 @@ const MobileMenu: FC<IMobileMenu> = ({ onClose }) => {
 			<X onClick={onClose} id={"close"} />
 			<div className='mobileMenuLinks'>
 				{headerConfig.navigation.map((item) => (
-					<>
+					<React.Fragment key={item.href}>
 						<Link
-							key={item.href}
 							href={item.href}
 							id={item.href === "/category" ? "categoryLink" : ""}
 							className={
@@ -51,7 +50,7 @@ const MobileMenu: FC<IMobileMenu> = ({ onClose }) => {
 							{item.label}
 						</Link>
 						{item.href === "/category" && showCategories && <CategoryMenu />}
-					</>
+					</React.Fragment>
 				))}
 			</div>
 			<Link className='btn' href={headerConfig.ctaButton.href}>
