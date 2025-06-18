@@ -1,10 +1,10 @@
 "use client";
 
 import { ConfigContext } from "@/contexts/ConfigContext";
-import { useContext } from "react";
+import { use } from "react";
 
 export const useConfig = () => {
-	const config = useContext(ConfigContext)!;
+	const config = use(ConfigContext)!;
 	if (!config) throw new Error("Config is missing");
 	return config;
 };

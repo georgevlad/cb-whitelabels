@@ -12,9 +12,7 @@ const ConfigProvider = ({
 	config: SiteConfig;
 	children: React.ReactNode;
 }) => {
-	return (
-		<ConfigContext.Provider value={config}>{children}</ConfigContext.Provider>
-	);
+	return <ConfigContext value={config}>{children}</ConfigContext>;
 };
 
 export default ConfigProvider;
