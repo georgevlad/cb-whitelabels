@@ -958,6 +958,10 @@ html, body {
         width: 100%;
         padding: 40px 20px 20px;
 
+        a {
+            font-size: 14px;
+        }
+
         .footer-top {
             flex-direction: column;
         }
@@ -969,6 +973,8 @@ html, body {
 
         .cta-box {
             width: 100%;
+            margin-top: 10px;
+
             & > div {
                 flex-direction: column;
                 gap: 12px;
@@ -988,6 +994,10 @@ html, body {
 
             a:first-of-type {
                 margin-left: 0;
+            }
+
+            span {
+                font-size: 14px;
             }
         }
     }
