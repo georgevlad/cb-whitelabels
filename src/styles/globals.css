@@ -953,8 +953,10 @@ html, body {
     padding: 45px 108px;
     color: #fff;
 
-    @media screen and (max-width: 768px) {
-        padding: 20px;
+    @media screen and (max-width: 1023px) {
+        max-width: none;
+        width: 100%;
+        padding: 40px 20px 20px;
 
         .footer-top {
             flex-direction: column;
@@ -962,11 +964,30 @@ html, body {
 
         .footer-menu {
             flex-direction: column;
+            gap: 12px;
         }
 
         .cta-box {
+            width: 100%;
+            & > div {
+                flex-direction: column;
+                gap: 12px;
+                max-width: 400px;
+                width: 100%;
+                margin: 0 auto;
+            }
             input {
-                max-width: 140px;
+                margin-right: 0 !important;
+            }
+        }
+        
+        .footer-bottom {
+            flex-direction: column-reverse;
+            gap: 12px;
+            padding-top: 32px !important;
+
+            a:first-of-type {
+                margin-left: 0;
             }
         }
     }
