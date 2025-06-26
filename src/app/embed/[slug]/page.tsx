@@ -148,6 +148,10 @@ export default function EmbedPage() {
         <div className="content-area">
           <div className="embed-header">
             <h1>{category.title}</h1>
+            <p>
+              TODO - let's try to style this wrapper a bit better and 
+            </p>
+            <p>TODO- add Some info about its parent category (subcategory) - optional.</p>
           </div>
           <div 
             className="embed-container" 

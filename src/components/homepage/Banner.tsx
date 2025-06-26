@@ -1,6 +1,7 @@
 'use client'
 
 import { useConfig } from "@/hooks/useConfig";
+import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 
 export default function Banner() {
@@ -17,6 +18,12 @@ export default function Banner() {
 						plans, insurance, mobile subscriptions, and fuel savings—free,
 						secure, and packed with exclusive offers.
 					</p>
+
+					<p style={{ color: 'red' }}>
+						TODO: let's see how we can add links to <a href="https://whitelabels.gvs.plus/category/versicherungen">categories </a>  or 
+ <a href="https://whitelabels.gvs.plus/embed/kfz-versicherung"> actual services pages </a> 
+
+				</p>
 				</div>
 			</div>
 

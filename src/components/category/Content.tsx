@@ -38,6 +38,10 @@ const Content = () => {
 		return (
 			<section className='content-section active'>
 				<h1 className='section-title'>{currentCategory.title}</h1>
+				<p>
+					TODO - info about the category. <br/>
+					Schutz für alle Lebenslagen – von Gesundheit bis Eigentum. - Category introduction text
+				</p>
 				<div className='cards-grid'>
 					{currentCategory.children.map((child) => (
 						<div
