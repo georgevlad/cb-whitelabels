@@ -39,8 +39,10 @@ const Content = () => {
 			<section className='content-section active'>
 				<h1 className='section-title'>{currentCategory.title}</h1>
 				<p>
-					TODO - info about the category. <br/>
+					TODO - add some info text about the category. <br/>
 					Schutz für alle Lebenslagen – von Gesundheit bis Eigentum. - Category introduction text
+					<br/>
+					TODO - style the display of the categories and subategories. We can have 2 levels or 3 level categories & subcategories - the last level will be a link to the embeded service page
 				</p>
 				<div className='cards-grid'>
 					{currentCategory.children.map((child) => (
