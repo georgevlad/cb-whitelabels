@@ -42,7 +42,12 @@ const Content = () => {
 					TODO - add some info text about the category. <br/>
 					Schutz für alle Lebenslagen – von Gesundheit bis Eigentum. - Category introduction text
 					<br/>
-					TODO - style the display of the categories and subategories. We can have 2 levels or 3 level categories & subcategories - the last level will be a link to the embeded service page
+					TODO - style the display of the categories and subategories. 
+					<br/> 
+					We can have 2 levels or 3 level categories & subcategories - the last level will be a link to the embeded service page
+					<br/>
+					Because the categories and services are very diverse can we find some generic icons / styles for the categories and subcategories? 
+					(and maybe some more specific styling for the featured ones from the homepage)
 				</p>
 				<div className='cards-grid'>
 					{currentCategory.children.map((child) => (
